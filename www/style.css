@@ -1,0 +1,20 @@
+.container-fluid {
+	min-width: 1000px;
+	max-width: 1000px;
+	float:none;
+	margin:0 auto;
+}
+
+div.container-fluid {
+background-color: #FFFFFF;
+}
+
+body {
+font-family: Georgia, serif;
+background-color: #282828;
+} 
+
+.extraspace{
+  height:75px;
+}
+
