@@ -4,7 +4,6 @@ library(queryBuildR)
 
 shinyUI(fluidPage(
   includeCSS('www/style.css'),
-  tags$link(rel = "stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css", type="text/css"),
   fluidRow(
     column(10,offset=1,
            h4("Define and apply filters"),
