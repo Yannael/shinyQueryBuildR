@@ -23,7 +23,7 @@ shinyServer(function(input, output, session) {
   
   output$queryBuilderWidget<-renderQueryBuildR({
     data<-sessionvalues$data
-    filters<-getFiltersFromTable(data)
+    load("filters.Rdata")
     rules<-NULL
     queryBuildR(rules,filters)
   })
@@ -32,23 +32,11 @@ shinyServer(function(input, output, session) {
     data<-sessionvalues$data
     colnames(data)<-as.vector(sapply(colnames(data),idToName))
     action <- dataTableAjax(session, data,rownames=F)
-    widget<-datatable(data, 
-                      extensions = 'Scroller',
-                      server = TRUE, 
-                      selection = 'single',
-                      rownames=F,
-                      escape=T,
-                      options = list(
-                        dom= 'itS',
-                        deferRender = TRUE,
-                        scrollY = 335,
-                        ajax = list(url = action),
-                        columnDefs = list(
-                          list(className="dt-right",targets="_all")
-                        )
+    datatable(data, rownames=F, 
+              options = list(
+                        dom= 'itp',
+                        ajax = list(url = action)
                       )
     )
-    widget
-  })
-  
+  }, server = TRUE)
 })
