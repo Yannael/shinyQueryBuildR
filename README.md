@@ -1,5 +1,5 @@
 # shinyQueryBuildR
-Demo for queryBuildR R package
+Demo for [queryBuildR](https://github.com/Yannael/queryBuildR) R package
 
 Online examples at:
 * http://yleborgne.net/shinyQueryBuildRDemo
